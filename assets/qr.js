@@ -1,4 +1,3 @@
-
 var error = document.querySelector(".error");
 
 document.querySelectorAll(".action").forEach((element) => {
@@ -10,5 +9,5 @@ document.querySelectorAll(".action").forEach((element) => {
 document.querySelectorAll(".close").forEach((element) => {
     element.addEventListener('click', () => {
         error.classList.remove("error_open");
-    })
-})
+    });
+});
