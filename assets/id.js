@@ -1,3 +1,4 @@
+
 var params = new URLSearchParams(window.location.search);
 
 document.querySelector(".login").addEventListener('click', () => {
@@ -12,9 +13,8 @@ if (hours >= 18 || hours < 4){
 }
 document.querySelector(".welcome").innerHTML = welcome;
 
-function toHome() {
-     const baseUrl = "https://koxo232.github.io/koxo/home";
-     window.location.href = baseUrl + "?" + params.toString();
+function toHome(){
+    location.href = '/home?' + params;
 }
 
 var input = document.querySelector(".password_input");
