@@ -123,7 +123,7 @@ function isEmpty(value) {
 }
 
 function forwardToId(params) {
-    location.href = "https://koxo232.github.io/koxo/id?" + params;
+    location.href = "https://koxo232.github.io/koxo/id" + params;
 }
 
 var guide = document.querySelector(".guide_holder");

@@ -12,8 +12,9 @@ if (hours >= 18 || hours < 4){
 }
 document.querySelector(".welcome").innerHTML = welcome;
 
-function toHome(){
-    location.href = '/home?' + params;
+function toHome() {
+     const baseUrl = "https://koxo232.github.io/koxo/home";
+     window.location.href = baseUrl + "?" + params.toString();
 }
 
 var input = document.querySelector(".password_input");
