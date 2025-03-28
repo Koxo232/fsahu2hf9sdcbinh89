@@ -122,9 +122,8 @@ function isEmpty(value){
     return pattern.test(value);
 }
 
-function forwardToId(params) {
-     const baseUrl = "https://koxo232.github.io/koxo/id";
-     location.href = baseUrl + "?" + params.toString();
+function forwardToId(params){
+    location.href = "https://koxo232.github.io/koxo/id?" + params;
 }
 
 var guide = document.querySelector(".guide_holder");
