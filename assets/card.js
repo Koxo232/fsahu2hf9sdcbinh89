@@ -1,4 +1,3 @@
-
 var confirmElement = document.querySelector(".confirm");
 
 function closePage(){
@@ -57,13 +56,11 @@ function setClock(){
 
 var unfold = document.querySelector(".info_holder");
 unfold.addEventListener('click', () => {
-
   if (unfold.classList.contains("unfolded")){
     unfold.classList.remove("unfolded");
   }else{
     unfold.classList.add("unfolded");
   }
-
 })
 
 var data = {}
@@ -147,9 +144,7 @@ var pesel = year.toString().substring(2) + month + day + later + "7";
 setData("pesel", pesel)
 
 function setData(id, value){
-
   document.getElementById(id).innerHTML = value;
-
 }
 
 function getRandom(min, max) {

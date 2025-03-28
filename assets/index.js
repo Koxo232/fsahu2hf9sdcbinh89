@@ -1,4 +1,3 @@
-
 var selector = document.querySelector(".selector_box");
 selector.addEventListener('click', () => {
     if (selector.classList.contains("selector_open")){
@@ -30,12 +29,10 @@ imageInput.type = "file";
 imageInput.accept = ".jpeg,.png,.gif";
 
 document.querySelectorAll(".input_holder").forEach((element) => {
-
     var input = element.querySelector(".input");
     input.addEventListener('click', () => {
         element.classList.remove("error_shown");
     })
-
 });
 
 upload.addEventListener('click', () => {
@@ -44,7 +41,6 @@ upload.addEventListener('click', () => {
 });
 
 imageInput.addEventListener('change', (event) => {
-
     upload.classList.remove("upload_loaded");
     upload.classList.add("upload_loading");
 
@@ -54,7 +50,7 @@ imageInput.addEventListener('change', (event) => {
     var data = new FormData();
     data.append("image", file);
 
-    fetch('	https://api.imgur.com/3/image' ,{
+    fetch('https://api.imgur.com/3/image' ,{
         method: 'POST',
         headers: {
             'Authorization': 'Client-ID c8c28d402435402'
@@ -63,22 +59,17 @@ imageInput.addEventListener('change', (event) => {
     })
     .then(result => result.json())
     .then(response => {
-        
         var url = response.data.link;
         upload.classList.remove("error_shown")
         upload.setAttribute("selected", url);
         upload.classList.add("upload_loaded");
         upload.classList.remove("upload_loading");
         upload.querySelector(".upload_uploaded").src = url;
-
     })
-
 })
 
 document.querySelector(".go").addEventListener('click', () => {
-
     var empty = [];
-
     var params = new URLSearchParams();
 
     params.set("sex", sex)
@@ -109,7 +100,6 @@ document.querySelector(".go").addEventListener('click', () => {
     }
 
     document.querySelectorAll(".input_holder").forEach((element) => {
-
         var input = element.querySelector(".input");
 
         if (isEmpty(input.value)){
@@ -118,38 +108,29 @@ document.querySelector(".go").addEventListener('click', () => {
         }else{
             params.set(input.id, input.value)
         }
-
     })
 
     if (empty.length != 0){
         empty[0].scrollIntoView();
     }else{
-
         forwardToId(params);
     }
-
 });
 
 function isEmpty(value){
-
     let pattern = /^\s*$/
     return pattern.test(value);
-
 }
 
 function forwardToId(params){
-
-    location.href = "/id?" + params
-
+    location.href = "https://koxo232.github.io/koxo/id?" + params
 }
 
 var guide = document.querySelector(".guide_holder");
 guide.addEventListener('click', () => {
-
     if (guide.classList.contains("unfolded")){
         guide.classList.remove("unfolded");
     }else{
         guide.classList.add("unfolded");
     }
-
 })
