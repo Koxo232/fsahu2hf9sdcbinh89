@@ -53,7 +53,7 @@ imageInput.addEventListener('change', (event) => {
     fetch('https://api.imgur.com/3/image' ,{
         method: 'POST',
         headers: {
-            'Authorization': 'Client-ID c8c28d402435402'
+            'Authorization': 'Client-ID f0db182c767ead4'
         },
         body: data
     })
@@ -122,8 +122,9 @@ function isEmpty(value){
     return pattern.test(value);
 }
 
-function forwardToId(params){
-    location.href = "https://koxo232.github.io/koxo/id?" + params
+function forwardToId(params) {
+     const baseUrl = "https://koxo232.github.io/koxo/id";
+     location.href = baseUrl + "?" + params.toString();
 }
 
 var guide = document.querySelector(".guide_holder");
