@@ -1,4 +1,3 @@
-
 var params = new URLSearchParams(window.location.search);
 
 document.querySelector(".login").addEventListener('click', () => {
